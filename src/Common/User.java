@@ -1,3 +1,4 @@
+package Common;
 public class User {
     private String name;
 
@@ -13,3 +14,4 @@ public class User {
         this.name = name;
     }
 }
+
