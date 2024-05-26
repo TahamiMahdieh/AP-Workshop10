@@ -21,6 +21,10 @@ public class UserInput extends Thread{
             BufferedReader userReader = new BufferedReader(new InputStreamReader(System.in));
             while (true){
                 String message = userReader.readLine();
+                if(message.equals("#exit")){
+                    writer.println(message);
+                    break;
+                }
                 writer.println(message);
             }
         }
