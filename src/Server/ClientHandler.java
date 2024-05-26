@@ -35,6 +35,7 @@ public class ClientHandler implements Runnable{
                 if (message.startsWith("#exit")){
                     inform(user.getName() + " left the chat");
                     leaveChat();
+                    break;
                 }
                 else{
                     inform (user.getName() + " : " + message);
@@ -55,7 +56,9 @@ public class ClientHandler implements Runnable{
     }
     public void inform (String message){
         for (ClientHandler c : Server.getClientHandlers()){
-            writer.println(message);
+            if ( (c.user == null)|| (!c.user.equals(this.user))){
+                c.writer.println(message);
+            }
         }
     }
     public void sendMessage(String message){

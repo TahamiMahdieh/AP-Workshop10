@@ -23,6 +23,9 @@ public class Client2 {
 
         while (true){
             String message = reader.readLine();
+            if (message == null){
+                break;
+            }
             System.out.println(message);
         }
     }
